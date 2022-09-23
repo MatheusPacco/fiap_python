@@ -1,12 +1,14 @@
-array_dias_semana = [];  
+array_dias_semana = []
 
 total_dias_semana = 5 
 range_dias_semana = range(total_dias_semana)
 
 maior_valor_votos = 0 
-dia_mais_votado = 0 
+dia_mais_votado = 0  
 
-# Função os valores em dias da semana
+empate = 0
+
+# Função transformando os valores em dias da semana
 def DiasDaSemana(dia):
     if dia == 0:
         return "Segunda-Feira"
@@ -29,12 +31,16 @@ for index in range_dias_semana:
         dia_mais_votado = index
         maior_valor_votos = array_dias_semana[index]
 
-print("\n")
+# Validando se não houve empate
+for dias in range_dias_semana:
+    if maior_valor_votos == array_dias_semana[dias] and dia_mais_votado != dias: 
+        empate = 1
 
 # Exibindo o dia escolhido 
-print("O dia da semana escolhido foi {}".format(DiasDaSemana(dia_mais_votado)))
-
-print("\n")
+if empate == 1:
+    print("HOUVE EMPATE NA VOTAÇÃO")
+else: 
+    print("O dia da semana escolhido foi {}".format(DiasDaSemana(dia_mais_votado)))
 
 print("Tabela de votos com base nos dias da semana \n")
 

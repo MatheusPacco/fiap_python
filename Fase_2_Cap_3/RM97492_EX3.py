@@ -9,8 +9,6 @@
 # 4.1.1 VOCÊ ESTÁ DIGITANDO AS NOTAS DOS ALUNOS PARES (ou ímpares, quando for o caso).
 # 4.1.2 POR FAVOR, INSIRA A NOTA DO ALUNO DE NÚMERO x.
 
-from cgi import print_directory
-
 
 total_alunos = 10
 media_alunos_impares = 0 
@@ -47,6 +45,8 @@ print(f"A nota média dos alunos pares é de {media_alunos_pares: .1f}")
 print("\n")
 
 if media_alunos_impares > media_alunos_pares:
-    print("Os alunos número ÍMPAR tiveram uma nota média maior que a dos alunos de número PAR")
-else: 
-    print("Os alunos número PAR tiveram uma nota média maior que a dos alunos de número ÍMPAR")
+    print("Os alunos de número ÍMPAR tiveram uma nota média maior que a dos alunos de número PAR")
+elif media_alunos_pares > media_alunos_impares: 
+    print("Os alunos de número PAR tiveram uma nota média maior que a dos alunos de número ÍMPAR")
+elif media_alunos_impares == media_alunos_pares:
+    print("Os dois conjuntos de alunos atingiram a mesma média de nota")
